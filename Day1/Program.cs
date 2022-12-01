@@ -14,8 +14,7 @@ foreach (string line in lines)
     amount += int.Parse(line);
 }
 
-amounts.Sort();
-amounts.Reverse();
+amounts.Sort((x, y) => y.CompareTo(x));
 
 Console.WriteLine(amounts[0]);
 Console.WriteLine(amounts[0] + amounts[1] + amounts[2]);
