@@ -1,8 +1,7 @@
-﻿List<string> lines = File.ReadAllLines("input1.txt").ToList();
-List<int> amounts = new();
+﻿List<int> amounts = new();
 
 int amount = 0;
-foreach (string line in lines)
+foreach (string line in File.ReadAllLines("input1.txt").ToList())
 {
     if (string.IsNullOrEmpty(line))
     {
