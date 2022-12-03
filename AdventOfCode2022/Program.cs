@@ -1,5 +1,4 @@
-﻿using AdventOfCode2022;
-using AdventOfCode2022.Input;
+﻿using AdventOfCode;
 using System.Diagnostics;
 
 var interfaceType = typeof(IAdventOfCode);
@@ -9,6 +8,12 @@ var objects = AppDomain.CurrentDomain.GetAssemblies()
     .Select(x => Activator.CreateInstance(x));
 
 var watch = new Stopwatch();
+
+if (!objects.Any())
+{
+    Console.WriteLine($"*************** No Code to run found ***************");
+    Console.WriteLine($"Make sure your classes use the '{interfaceType.Name}' interface!");
+}
 
 foreach (IAdventOfCode? instance in objects)
 {

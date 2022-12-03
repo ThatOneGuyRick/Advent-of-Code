@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AdventOfCode;
 
 namespace AdventOfCode2022.Code
 {
@@ -38,9 +34,7 @@ namespace AdventOfCode2022.Code
         {
             foreach (var group in _input2)
             {
-                var letter2 = group
-                .Skip(1)
-                .Aggregate(
+                var letter2 = group.Skip(1).Aggregate(
                     new HashSet<char>(group.First()),
                     (h, e) => { h.IntersectWith(e); return h; }
                 );
