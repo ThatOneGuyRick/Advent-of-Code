@@ -25,12 +25,12 @@ foreach (IAdventOfCode? instance in objects)
     watch.Restart();
     var partOne = instance.PartOne();
     watch.Stop();
-    Console.WriteLine($"Solutions part one: {partOne} ({watch.ElapsedMilliseconds} ms)");
+    Console.WriteLine($"Solution part one: {partOne} ({watch.ElapsedMilliseconds} ms)");
 
     watch.Restart();
     var partTwo = instance.PartTwo();
     watch.Stop();
-    Console.WriteLine($"Solutions part Two: {partTwo} ({watch.ElapsedMilliseconds} ms)");
+    Console.WriteLine($"Solution part Two: {partTwo} ({watch.ElapsedMilliseconds} ms)");
 
     Console.WriteLine();
 }
