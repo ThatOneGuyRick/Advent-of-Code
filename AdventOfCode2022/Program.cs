@@ -34,3 +34,12 @@ foreach (IAdventOfCode? instance in objects)
 
     Console.WriteLine();
 }
+
+internal class ComputeName
+{
+    internal static string Compute(string name)
+    {
+        string toBeSearched = "Day";
+        return name.Substring(name.IndexOf("Day") + toBeSearched.Length);
+    }
+}
