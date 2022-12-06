@@ -7,14 +7,14 @@ var objects = AppDomain.CurrentDomain.GetAssemblies()
     .Where(x => interfaceType.IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
     .Select(x => Activator.CreateInstance(x));
 
-var watch = new Stopwatch();
-
 if (!objects.Any())
 {
     Console.WriteLine($"*************** No Code to run found ***************");
     Console.WriteLine($"Make sure your classes use the '{interfaceType.Name}' interface!");
+    Environment.Exit(0);
 }
 
+var watch = new Stopwatch();
 foreach (IAdventOfCode? instance in objects)
 {
     if (Object.ReferenceEquals(instance, null))
